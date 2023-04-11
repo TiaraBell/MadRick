@@ -17,7 +17,13 @@ fetch("https://rickandmortyapi.com/api/character")
   .then((response) => response.json())
   .then((responseJson) => {
     for (let { name, image } of responseJson.results) {
-      console.log(name);
-      console.log(image);
+      //   console.log(name);
+      //   console.log(image);
+      const characterPic = document.createElement("img");
+      characterPic.setAttribute("src", image);
+      const characterName = document.createElement("p");
+      characterName.innerText = name;
+      characters.append(characterPic);
+      characters.append(characterName);
     }
   });
